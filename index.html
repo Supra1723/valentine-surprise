@@ -48,11 +48,12 @@
       box-shadow: 0 18px 60px rgba(0,0,0,.15);
     }
 
-    .art {
-      width: min(180px, 50vw);
+    /* BUBU DUDU IMAGE STYLE */
+    .bubu-dudu {
+      width: min(200px, 55vw);
       margin: 0 auto 10px;
       display: block;
-      filter: drop-shadow(0 10px 14px rgba(0,0,0,.12));
+      border-radius: 15px;
     }
 
     h1 {
@@ -139,9 +140,7 @@
   <canvas id="confettiCanvas"></canvas>
 
   <main class="card">
-    <svg class="art" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <path d="M100 180c-50-40-90-70-90-110 0-30 20-50 50-50 15 0 30 10 40 20 10-10 25-20 40-20 30 0 50 20 50 50 0 40-40 70-90 110z" fill="#ff3b7a"/>
-    </svg>
+    <img id="mainImage" class="bubu-dudu" src="https://media.tenor.com/97_A_UpxH7AAAAAi/bubu-dudu-bubu.gif" alt="Bubu Dudu Hug">
 
     <h1 id="mainQuestion">Sayani, will you be my Valentine?</h1>
 
@@ -170,6 +169,7 @@
     const hint = document.getElementById("hint");
     const music = document.getElementById("bgMusic");
     const mainQuestion = document.getElementById("mainQuestion");
+    const mainImage = document.getElementById("mainImage");
 
     const confettiCanvas = document.getElementById("confettiCanvas");
     const confettiInstance = confetti.create(confettiCanvas, { resize: true, useWorker: true });
@@ -220,7 +220,7 @@
       zone.style.display = "none";
       hint.style.display = "none";
       mainQuestion.style.display = "none";
-      document.querySelector('.art').style.display = "none";
+      mainImage.style.display = "none";
       result.style.display = "block";
       fireConfetti();
       setInterval(fireConfetti, 2000);
